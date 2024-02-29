@@ -59,6 +59,14 @@ def _post_story(request: HttpRequest):
     region = request.POST['region']
     details = request.POST['details']
 
+    allowed_categories = ['pol', 'art', 'tech', 'trivia']
+    allowed_regions = ['uk', 'eu', 'w']
+
+    if category not in allowed_categories:
+        return HttpResponse(f'Allowed categories: {allowed_categories}', status=503)
+    if region not in allowed_regions:
+        return HttpResponse(f'Allowed regions: {allowed_regions}', status=503)
+
     story = Story(
         headline=headline,
         category=category,
