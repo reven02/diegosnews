@@ -105,7 +105,7 @@ def delete_story(request: HttpRequest, key: int):
     try:
         Story.objects.get(pk=key).delete()
     except:
-        return HttpResponse(f'Story <{key}> not exist.', status=200)
+        return HttpResponse(f'Story <{key}> does not exist.', status=200)
 
     return HttpResponse(f'Story <{key}> deleted.', status=200)
     
