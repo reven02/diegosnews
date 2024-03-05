@@ -46,7 +46,7 @@ def stories(request: HttpRequest):
         return _get_story(request)
     
     else:
-        return HttpResponseNotAllowed(['POST'], content='Only GET and POST methods allowed.')
+        return HttpResponseNotAllowed(['POST', 'GET'], content='Only GET and POST methods allowed.')
 
 
 def _post_story(request: HttpRequest):

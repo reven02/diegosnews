@@ -19,10 +19,10 @@ class Story(models.Model):
         return {
             'key': self.pk,
             'headline': self.headline,
-            'category': self.category,
-            'region': self.region,
+            'story_cat': self.category,
+            'story_region': self.region,
             'author': self.author.first_name,
-            'date': self.date.strftime('%d/%m/%Y'),
-            'details': self.details,   
+            'story_date': self.date.strftime('%d/%m/%Y'),
+            'story_details': self.details,   
         }
 
